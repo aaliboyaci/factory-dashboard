@@ -1,12 +1,11 @@
 **README.md**
 
-```md
-# factory-dashboard — Real-Time Production Monitoring (React + Node.js)
-
 <p align="center">
   <img src="./project-overview.gif" alt="Project overview" width="960" />
 </p>
 
+
+# factory-dashboard — Real-Time Production Monitoring (React + Node.js)
 ---
 
 ## EN (Simple)
@@ -34,7 +33,7 @@ It is good for demo and learning.
 **Backend:** Node.js, Express, ws, zod, cors, helmet, pino
 
 ### Architecture (short)
-```
+
 
 Frontend (React)
 
@@ -215,7 +214,7 @@ docker compose up -d
 * **Hata ayıklama:** import/izin/paket sorunlarının teşhisi ve deployment hata düzeltmeleri.
 * **Dokümantasyon:** README, check-list ve komut örnekleri.
 
-**Etkisi:** Prototip çıkış süresi ciddi kısaldı; ancak **doğrulama, güvenlik ve mimari kararlar bende** kaldı.
+**Etkisi:** MVP çıkış süresi ciddi kısaldı; ancak **doğrulama, güvenlik ve mimari kararlar bende** kaldı.
 Bu yaklaşım ile teslim süresi **günler yerine saatler** seviyesine indi.
 
 
