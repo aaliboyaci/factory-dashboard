@@ -13,13 +13,11 @@ import { corsOptions } from './utils/corsOptions.js'
 const logger = pino(isDev ? { transport: { target: 'pino-pretty' } } : {})
 
 
-app.use(cors(corsOptions))
-app.options('*', cors(corsOptions)) // preflight
-
 const app = express()
 app.use(helmet())
 app.use(express.json())
-
+app.use(cors(corsOptions))
+app.options('*', cors(corsOptions)) // preflight
 app.get('/healthz', (_, res) => res.json({ ok: true }))
 app.use('/api', api)
 
