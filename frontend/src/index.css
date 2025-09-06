@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  }
+}
+
+.card {
+  @apply rounded-xl border shadow-md bg-white/70 border-slate-200
+         dark:bg-slate-900/60 dark:border-slate-800;
+}
+.badge {
+  @apply text-xs px-2 py-0.5 border rounded border-slate-300
+         dark:border-slate-700;
+}

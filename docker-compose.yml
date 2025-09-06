@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  backend:
+    build: ./backend
+    environment:
+      - NODE_ENV=production
+      - BACKEND_PORT=4000
+      - CORS_ORIGIN=http://localhost:5173
+      - WS_PATH=/ws
+      - MOCK_SPEED_FACTOR=1
+    ports:
+      - "4000:4000"
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_BASE=http://localhost:4000/api
+      - VITE_WS_URL=ws://localhost:4000/ws
+    ports:
+      - "5173:5173"
