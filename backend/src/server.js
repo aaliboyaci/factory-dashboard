@@ -8,12 +8,16 @@ import { env, isDev } from './config/env.js'
 import api from './routes/index.js'
 import { metricsService } from './services/metrics.service.js'
 import { attachWs } from './ws/index.js'
+import { corsOptions } from './utils/corsOptions.js'
 
 const logger = pino(isDev ? { transport: { target: 'pino-pretty' } } : {})
 
+
+app.use(cors(corsOptions))
+app.options('*', cors(corsOptions)) // preflight
+
 const app = express()
 app.use(helmet())
-app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }))
 app.use(express.json())
 
 app.get('/healthz', (_, res) => res.json({ ok: true }))
